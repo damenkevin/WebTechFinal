@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="cards/cards.css">
+    <link rel="stylesheet" href="cards/cards-ie.css">
+    <link rel="stylesheet" href="cards/cards-ie9.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+<body>
+<div class="mainC">
+    <div id="loginContainer">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input id='loginUser' class="form-control" placeholder="Username" name="username" type="username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input id='loginPass' class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <button id='loginBtn' class="btn btn-lg btn-success btn-block">Login</button>
+                                <br/>
+                                <p>Don't have an account yet? <a id="gotoregister">Click here to register</a></p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="registerContainer">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Register</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id="registerForm">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input id="username" class="form-control" placeholder="Username" name="username" type="username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input id="email" class="form-control" placeholder="E-mail" name="email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="secPassword" class="form-control" placeholder="Re-Enter Password" name="password2" type="password" value="">
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a id="registerBtn" class="btn btn-lg btn-success btn-block">Register</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dashboardContainer">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="usernameTop" class="navbar-brand" >USERNAME</a>
+                <img id="profile" src="images/profile.png" height="50px" width="50px" alt="profile">
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown logout pull-right" id="logoutBtn">
+                    <a class="dropdown-toggle"  href="#">
+                        <i class="fa fa-power-off fa-fw fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <h2 id="friend">Online Users</h2>
+                    <div class="table-responsive" style="overflow-x: hidden;">
+                        <table width="100%" class="table table-striped table-bordered table-hover"
+                               id="dataTables-user">
+                            <thead style="display:none">
+                                <tr>
+                                    <th>img</th>
+                                    <th>name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="onlineUsersTable">
+                                <tr>
+                                    <td>hallo</td>
+                                    <td>hallo</td>
+                                </tr>
+                           </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-trophy fa-fw"></i> Leaderboard
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 col-xl-10">
+                                    <div class="table-responsive" style="overflow-x: hidden;">
+                                        <table width="100%" class="table table-striped table-bordered table-hover"
+                                               id="dataTables-leaderboard">
+                                            <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Points</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chat-panel panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-comments fa-fw"></i> Global Chat
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul id="globalChatField" class="chat">
+
+
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                        Send
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /.panel-footer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="gameContainer">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="usernameTop" class="navbar-brand" >USERNAME</a>
+                <img id="profile" src="images/profile.png" height="50px" width="50px" alt="profile">
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="exit pull-right" id="exitBtn">
+                        <a id="exitGame" class="dropdown-toggle"  href="#">
+                            <i class="fa fa-times fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-trophy fa-fw"></i> Game
+                        </div>
+                        <div class="panel-body game-panel">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-6">
+                                    <h2  class="gameHeader" id="turnNotification"></h2>
+                                    <div class="playingCards simpleCards ">
+                                        <div id="disableCards"></div>
+                                        <ul id="playerHand" class="hand">
+
+                                        </ul>
+                                        <ul id="playerHand2" class="hand">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div  class="col-xs-4 col-xl-6 playedCard">
+                                  <h2 class="gameHeader" id="lastPlayedCard">Last played card</h2>
+                                    <div id="stock" class="playingCards simpleCards playedface ">
+                                        <div class="card back ">*</div>
+                                    </div>
+                                    <h4 id="counter">Cards on pile: 0</h4>
+                                    <button id="drawStock">Take the stock</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chat-panel panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-comments fa-fw"></i> Private Chat
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul id="inGameChatField" class="chat">
+
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="btn-privateInput" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning btn-sm" id="btn-privateChat">
+                                        Send
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /.panel-footer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="handler/main.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+    <link href="image-picker-master/image-picker/image-picker.css" rel="stylesheet"/>
+    <script src="image-picker-master/image-picker/image-picker.js"></script>
+    <script>$("select").imagepicker();</script>
+    <script src="dist/js/sb-admin-2.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="handler/renderCards.js"></script>
+    <script src="handler/handler.js"></script>
+</html>

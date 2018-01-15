@@ -1,0 +1,19 @@
+{
+  "name": "cards.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Job de Nooijer",
+  "license": "ISC",
+  "dependencies": {
+    "datatables": "^1.10.13",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.11",
+    "socket.io": "^2.0.4"
+  }
+}
